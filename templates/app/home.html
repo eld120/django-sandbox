@@ -1,0 +1,15 @@
+{% extends 'app/layout.html' %}
+
+{% block body %}
+<h3> Listings: </h3>
+    <h5><a href="{% url 'app:listing_create' %}">Create new Listing</a> </h5>
+    {% for listing in context %}
+        
+        <a href="{% url 'app:listing_detail' listing.slug %}">{{ listing }}</a>
+
+    {% endfor %}
+
+
+    
+
+{% endblock body %}

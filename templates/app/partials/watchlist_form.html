@@ -1,0 +1,15 @@
+
+
+    {% for field in watchlist_form.visible_fields  %}
+        {% csrf_token %}
+        {{field.errors}}
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.help_text }}
+        {{listing.slug}}
+    {% endfor %}
+           <input type="submit" value="submit"
+           hx-post="{% url 'app:watchlist_update' listing.slug %}"
+           hx-target="watchlist-form"
+           hx-swap="outerHTML"
+           >
