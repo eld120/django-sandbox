@@ -4,7 +4,7 @@
     <div class="container">
        
         <form method='POST' >
-            {% for field in form.visible_fields  %}
+            {% for field in watchlist_form.visible_fields  %}
                 {% csrf_token %}
                 {{field.errors}}
                 {{ field.label_tag }}

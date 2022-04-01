@@ -1,4 +1,4 @@
-
+<form method='POST' id="watchlist-form" action="{% url 'app:watchlist_update' listing.slug %}">
 
     {% for field in watchlist_form.visible_fields  %}
         {% csrf_token %}
@@ -8,8 +8,10 @@
         {{ field.help_text }}
         {{listing.slug}}
     {% endfor %}
-           <input type="submit" value="submit"
-           hx-post="{% url 'app:watchlist_update' listing.slug %}"
-           hx-target="watchlist-form"
-           hx-swap="outerHTML"
-           >
+    <button type="submit"> submit</button>
+    <!-- <input type="submit"  value="submit"
+        hx-post="{% url 'app:watchlist_update' listing.slug %}"
+            hx-target="watchlist-form"
+            hx-swap="outerHTML"
+            hx-trigger="click"> -->
+</form>
