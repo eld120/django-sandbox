@@ -73,7 +73,28 @@ select {
   }
 }
 .heart {
-  max-width: 10em;
+  max-width: 5em;
+  height: 5em;
+}
+
+button {
+  background-color: white;
+  border: none;
+}
+
+.filled-in {
+  animation: fadeIn ease-in 750ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
