@@ -1,0 +1,15 @@
+{% extends 'app/layout.html' %}
+{% block body %}
+<form method="POST">
+    {% for field in form.visible_fields %}
+    {% csrf_token %}
+            {{field.errors}}
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.help_text }}
+
+    {% endfor %}
+    <button type="submit"> submit</button>
+</form>
+
+{% endblock body %}
